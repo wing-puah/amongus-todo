@@ -9,7 +9,7 @@ const setup = () => {
   return [
     server,
     function cleanup() {
-      //   fs.unlinkSync('db.test.json');
+      fs.unlinkSync('db.test.json');
       process.env.DB = '';
     }
   ];
