@@ -1,0 +1,9 @@
+devtools.thegeekwing.com {
+    proxy / 10.130.0.2:3000 {
+        transparent
+    }
+
+    gzip
+
+    tls puahhuiying@gmail.com #Your email for Let's Encrypt Verification
+}

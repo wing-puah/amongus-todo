@@ -2,8 +2,23 @@ version: '3'
 
 services:
   web:
+    container_name: web
     build: .
     volumes:
       - .:/app
     ports:
-      - '3000:3000'
+      - '10.130.0.2:3000:3000'
+
+  caddy:
+    container_name: caddy
+    image: abiosoft/caddy:no-stats
+    restart: always
+    volumes:
+      - ./config/Caddyfile.proxy:/etc/Caddyfile
+      - ./config:/etc/caddycerts
+    environment:
+      CADDYPATH: /etc/caddycerts
+      ACME_AGREE: 'true'
+    ports:
+      - '80:80'
+      - '443:443'
