@@ -1,4 +1,4 @@
-FROM node:slim
+FROM node:20.3.0-slim
 
 # Create app directory
 RUN mkdir /app
